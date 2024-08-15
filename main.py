@@ -25,7 +25,7 @@ def get_db():
 # Rota raiz, geralmente usada para verificar se a API está funcionando
 @app.get("/")
 async def root():
-    return {"message": "Bem-vindo à API Restful"}
+    return {"message": "Bem-vinde à API Restful"}
 
 # Endpoint para buscar todos os usuários no banco de dados
 @app.get('/api/v1/users', response_model=List[UserResponse], status_code=status.HTTP_200_OK)
