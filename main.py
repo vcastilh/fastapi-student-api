@@ -6,8 +6,8 @@ from database import SessionLocal, create_tables
 from schemas import UserResponse, UserCreate, UserUpdate
 
 app = FastAPI(
-    title="Student Management API",
-    description="This API allows you to perform CRUD operations on user data, including creating, reading, updating, and deleting users.",
+    "título": "API de Gerenciamento de Alunos",
+    "descrição": "Esta API permite realizar operações CRUD nos dados dos usuários, incluindo a criação, leitura, atualização e exclusão de usuários.",
     version="1.0.0"
 )
 
@@ -26,19 +26,19 @@ def get_db():
 @app.get("/")
 async def root():
     return {
-        "message": "Welcome to the RESTful API",
-        "description": "This API is built using FastAPI, SQLAlchemy, and MySQL, deployed on Render.",
-        "version": "1.0.0",
-        "technologies": {
-            "framework": "FastAPI",
-            "database": "MySQL with SQLAlchemy ORM",
-            "deployment": "Render",
-            "language": "Python 3.11",
-            "other": "Pydantic for data validation, Uvicorn as ASGI server"
-        },
-        "aws_usage": "Using AWS Free Tier RDS with MySQL for database management.",
-        "documentation_url": "/docs",
-        "contact": "viniciaofelix@gmail.com",
+        "mensagem": "Bem-vindo à API RESTful",
+        "descrição": "Esta API foi construída utilizando FastAPI, SQLAlchemy e MySQL, implantada no Render.",
+        "versão": "1.0.0",
+        "tecnologias": {
+        "framework": "FastAPI",
+        "banco de dados": " RDS MySQL com SQLAlchemy ORM",
+        "deploy": "Render",
+        "linguagem": "Python 3.11",
+        "outros": "Pydantic para validação de dados, Uvicorn como servidor ASGI"
+  },
+  "uso_aws": "Usando o AWS Free Tier RDS com MySQL para gerenciamento de banco de dados.",
+  "documentação_url": "/docs",
+  "contato": "viniciaofelix@gmail.com"
     }
 
 # Endpoint para buscar todos os usuários no banco de dados
