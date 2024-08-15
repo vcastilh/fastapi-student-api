@@ -6,8 +6,8 @@ from database import SessionLocal, create_tables
 from schemas import UserResponse, UserCreate, UserUpdate
 
 app = FastAPI(
-    "título": "API de Gerenciamento de Alunos",
-    "descrição": "Esta API permite realizar operações CRUD nos dados dos usuários, incluindo a criação, leitura, atualização e exclusão de usuários.",
+    title="Student Management API",
+    description="This API allows you to perform CRUD operations on user data, including creating, reading, updating, and deleting users.",
     version="1.0.0"
 )
 
@@ -31,7 +31,7 @@ async def root():
         "versão": "1.0.0",
         "tecnologias": {
         "framework": "FastAPI",
-        "banco de dados": " RDS MySQL com SQLAlchemy ORM",
+        "banco de dados": " RDS(MySQL) com SQLAlchemy ORM",
         "deploy": "Render",
         "linguagem": "Python 3.11",
         "outros": "Pydantic para validação de dados, Uvicorn como servidor ASGI"
