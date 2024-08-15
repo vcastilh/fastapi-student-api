@@ -25,7 +25,46 @@ def get_db():
 # Rota raiz, geralmente usada para verificar se a API está funcionando
 @app.get("/")
 async def root():
-    return {"message": "Bem-vinde à API Restful"}
+    return {
+        "message": "Welcome to the RESTful API",
+        "description": "This API is built using FastAPI, SQLAlchemy, and MySQL, deployed on Render.",
+        "version": "1.0.0",
+        "technologies": {
+            "framework": "FastAPI",
+            "database": "MySQL with SQLAlchemy ORM",
+            "deployment": "Render",
+            "language": "Python 3.11",
+            "other": "Pydantic for data validation, Uvicorn as ASGI server"
+        },
+        "aws_usage": "Using AWS Free Tier RDS with MySQL for database management.",
+        "documentation_url": "/docs",
+        "contact": "viniciaofelix@gmail.com",
+        "ascii_art": """
+          /\/\/\                            /  \
+         | \  / |                         /      \
+         |  \/  |                       /          \
+         |  /\  |----------------------|     /\     |
+         | /  \ |                      |    /  \    |
+         |/    \|                      |   /    \   |
+         |\    /|                      |  | (  ) |  |
+         | \  / |                      |  | (  ) |  |
+         |  \/  |                 /\   |  |      |  |   /\
+         |  /\  |                /  \  |  |      |  |  /  \
+         | /  \ |               |----| |  |      |  | |----|
+         |/    \|---------------|    | | /|   .  |\ | |    |
+         |\    /|               |    | /  |   .  |  \ |    |
+         | \  / |               |    /    |   .  |    \    |
+         |  \/  |               |  /      |   .  |      \  |
+         |  /\  |---------------|/        |   .  |        \|
+         | /  \ |              / GENERATION BRASIL        \
+         |/    \|              (          |      |           )
+         |/\/\/\|               |    | |--|      |--| |    |
+------------------------/  \-----/  \/  \-----/  \--------
+                        \\//     \\//\\//     \\//
+                         \/       \/  \/       \/
+
+        """
+    }
 
 # Endpoint para buscar todos os usuários no banco de dados
 @app.get('/api/v1/users', response_model=List[UserResponse], status_code=status.HTTP_200_OK)
