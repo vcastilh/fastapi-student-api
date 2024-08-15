@@ -13,7 +13,7 @@ MYSQL_PORT = os.getenv('MYSQL_PORT')
 MYSQL_DB = os.getenv('MYSQL_DB')
 
 # Define your MySQL connection URL
-SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}/{MYSQL_DB}"
+SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_HOST}/{MYSQL_DB}"
 
 # Create the engine for interacting with the database
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
