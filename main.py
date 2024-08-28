@@ -27,16 +27,15 @@ def get_db():
 async def root():
     return {
         "mensagem": "Bem-vindo à API RESTful",
-        "descrição": "Esta API foi construída utilizando FastAPI, SQLAlchemy e MySQL, implantada no Render.",
+        "descrição": "Esta API foi construída utilizando FastAPI, SQLAlchemy e PostgreSQL, implantada no Render.",
         "versão": "1.0.0",
         "tecnologias": {
         "framework": "FastAPI",
-        "banco de dados": " RDS(MySQL) com SQLAlchemy ORM",
+        "banco de dados": " PostgreSQL com SQLAlchemy ORM",
         "deploy": "Render",
         "linguagem": "Python 3.11",
         "outros": "Pydantic para validação de dados, Uvicorn como servidor ASGI"
   },
-  "uso_aws": "Usando o AWS Free Tier RDS com MySQL para gerenciamento de banco de dados.",
   "documentação_url": "/docs",
   "contato": "viniciaofelix@gmail.com"
     }
