@@ -27,7 +27,7 @@ def get_db():
 async def root():
     return {
         "mensagem": "Bem-vindo à API RESTful",
-        "descrição": "Esta API foi construída utilizando FastAPI, SQLAlchemy e PostgreSQL, implantada no Render.",
+        "descrição": "Esta API foi construída utilizando FastAPI, SQLAlchemy e PostgreSQL, com deploy no Render.",
         "versão": "1.0.0",
         "tecnologias": {
         "framework": "FastAPI",
