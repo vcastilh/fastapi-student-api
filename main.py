@@ -79,13 +79,20 @@ async def update_user(user_id: str, updated_user: UserUpdate, db: Session = Depe
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Usuário com ID: {user_id} não existe")
     
-    # Atualiza os campos do usuário com os dados recebidos
-    user.nome_completo = updated_user.nome_completo
-    user.idade = updated_user.idade
-    user.nota_primeiro_semestre = updated_user.nota_primeiro_semestre
-    user.nota_segundo_semestre = updated_user.nota_segundo_semestre
-    user.nome_professor = updated_user.nome_professor
-    user.numero_sala = updated_user.numero_sala
+    # Atualizar os campos apenas se forem fornecidos na solicitação
+    if updated_user.nome_completo is not None:
+        user.nome_completo = updated_user.nome_completo
+    if updated_user.idade is not None:
+        user.idade = updated_user.idade
+    if updated_user.nota_primeiro_semestre is not None:
+        user.nota_primeiro_semestre = updated_user.nota_primeiro_semestre
+    if updated_user.nota_segundo_semestre is not None:
+        user.nota_segundo_semestre = updated_user.nota_segundo_semestre
+    if updated_user.nome_professor is not None:
+        user.nome_professor = updated_user.nome_professor
+    if updated_user.numero_sala is not None:
+        user.numero_sala = updated_user.numero_sala
+
     db.commit()  # Confirma as alterações no banco de dados
     db.refresh(user)  # Atualiza o objeto user com os dados do banco de dados
     return user  # Retorna os dados do usuário atualizado
