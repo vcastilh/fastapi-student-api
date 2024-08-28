@@ -75,7 +75,7 @@ async def register_user(user: UserCreate, db: Session = Depends(get_db)):
 @app.put('/api/v1/users/{user_id}', response_model=UserResponse, status_code=status.HTTP_200_OK)
 async def update_user(user_id: str, updated_user: UserUpdate, db: Session = Depends(get_db)):
     #user = db.query(UserModel).filter(UserModel.id == user_id).first()  # Busca o usuário pelo ID
-    user = fetch_user_id(user_id)
+    user = await fetch_user_id(user_id)
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Usuário com ID: {user_id} não existe")
     
