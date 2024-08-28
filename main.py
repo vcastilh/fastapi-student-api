@@ -87,18 +87,7 @@ async def update_user(user_id: str, updated_user: UserUpdate, db: Session = Depe
     user.numero_sala = updated_user.numero_sala
     db.commit()  # Confirma as alterações no banco de dados
     db.refresh(user)  # Atualiza o objeto user com os dados do banco de dados
-    return {
-        "message": f"Usuário com id {user_id} foi atualizado com sucesso.",
-        "updated_user": {
-            "id": user.id,
-            "nome_completo": user.nome_completo,
-            "idade": user.idade,
-            "nota_primeiro_semestre": user.nota_primeiro_semestre,
-            "nota_segundo_semestre": user.nota_segundo_semestre,
-            "nome_professor": user.nome_professor,
-            "numero_sala": user.numero_sala
-        }
-    }  # Retorna os dados do usuário atualizado
+    return user  # Retorna os dados do usuário atualizado
 
 # Endpoint para deletar um usuário pelo ID
 @app.delete("/api/v1/users/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
