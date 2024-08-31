@@ -37,7 +37,6 @@ async def root():
         "outros": "Pydantic para validação de dados, Uvicorn como servidor ASGI"
   },
   "documentação_url": "/docs",
-  "contato": "viniciaofelix@gmail.com"
     }
 
 # Endpoint para buscar todos os usuários no banco de dados
